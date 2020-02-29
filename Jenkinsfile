@@ -8,7 +8,7 @@ node('Noeud_Jenkins'){
     
    stage('CloningGit'){
           
-        git url: 'https://github.com/aaugrain/devopsapps.git',
+        git url: 'https://github.com/lynda-cheheb/devopsapp.git',
             branch: 'develop'
     }
     
@@ -24,7 +24,7 @@ node('Noeud_Jenkins'){
     
     stage ('Clonegit_Dockerfile'){
         
-        git url: 'https://github.com/aaugrain/Projet_CD.git',
+        git url: 'https://github.com/lynda-cheheb/myProjectCD.git',
             branch: 'master'
     }
     
@@ -45,7 +45,7 @@ node('Noeud_Jenkins'){
         ansiblePlaybook (
             colorized: true, 
             become: true,
-            playbook: 'playbook.yml',
+            playbook: 'playbook_Test.yml',
             inventory: 'ansible/inventory',
             extras: "--extra-vars 'image=$image'"
             
@@ -55,7 +55,7 @@ node('Noeud_Jenkins'){
     
     stage('CloningGit'){
           
-        git url: 'https://github.com/aaugrain/devopsapps.git',
+        git url: 'https://github.com/lynda-cheheb/devopsapp.git',
             branch: 'master'
     }
     
@@ -67,7 +67,7 @@ node('Noeud_Jenkins'){
     
     stage ('Clonegit_Dockerfile'){
         
-        git url: 'https://github.com/aaugrain/Projet_CD.git',
+        git url: 'https://github.com/lynda-cheheb/myProjectCD.git',
             branch: 'master'
     }
     
@@ -88,7 +88,7 @@ node('Noeud_Jenkins'){
         ansiblePlaybook (
             colorized: true, 
             become: true,
-            playbook: 'playbook_prod.yml',
+            playbook: 'playbook_Prod.yml',
             inventory: 'ansible/inventory',
             extras: "--extra-vars 'image_prod=$image_prod'"
             
