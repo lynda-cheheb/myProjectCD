@@ -1,4 +1,4 @@
-node('Noeud_Jenkins'){
+node('slave_node'){
 
     def registry = "mounabal/image_test"
     def registryCredential = "dockerhub"
@@ -46,7 +46,7 @@ node('Noeud_Jenkins'){
             colorized: true, 
             become: true,
             playbook: 'playbook_Test.yml',
-            inventory: 'ansible/inventory',
+            inventory: 'inventory',
             extras: "--extra-vars 'image=$image'"
             
         )
@@ -89,7 +89,7 @@ node('Noeud_Jenkins'){
             colorized: true, 
             become: true,
             playbook: 'playbook_Prod.yml',
-            inventory: 'ansible/inventory',
+            inventory: 'inventory',
             extras: "--extra-vars 'image_prod=$image_prod'"
             
         )    
