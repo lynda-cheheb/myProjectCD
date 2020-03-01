@@ -9,6 +9,6 @@
        name: test_app
        image: "{{ image }}"
        ports: 
-        - '80:9000'
+        - '9000:8080'
        state: started
        command: java -jar /usr/bin/devops-1.0.war
