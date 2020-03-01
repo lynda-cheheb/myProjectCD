@@ -8,6 +8,7 @@
       docker_container:
        name: test_app
        image: "{{ image }}"
-       ports: '8080:9000'
+       ports: 
+        - '8080:9000'
        state: started
        command: java -jar /usr/bin/devops-1.0.war
