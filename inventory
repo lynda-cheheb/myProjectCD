@@ -1,4 +1,4 @@
-node ansible_port=9000 ansible_host=192.168.1.58
+slave_node ansible_port=9000 ansible_host=192.168.1.58
 test_server ansible_port=8090 ansible_host=192.168.1.58
 app_server ansible_port=8085 ansible_host=192.168.1.58
 
