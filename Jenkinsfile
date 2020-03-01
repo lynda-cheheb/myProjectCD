@@ -1,9 +1,9 @@
 node('slave_node'){
 
-    def registry = "berberose/image_test"
+    def registry = "berberose/image-test"
     def registryCredential = "dockerhub"
     def image="${registry}:version-${env.BUILD_ID}"
-    def registry_prod = "berberose/image_prod"
+    def registry_prod = "berberose/image-prod"
     def image_prod="${registry_prod}:version-${env.BUILD_ID}"
     
    stage('CloningGit'){
