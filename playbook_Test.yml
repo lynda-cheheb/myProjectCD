@@ -1,7 +1,8 @@
 ---
 - hosts: test_server
   tasks:
-    - import play_book: python.yml
+    - name: import python role
+      import play_book: python.yml
 
     - name: creation du conteneur
       docker_container:
